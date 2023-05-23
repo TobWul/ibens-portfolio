@@ -30,8 +30,38 @@ module.exports = {
       768: "48rem",
       screen: "100vw",
     },
+    fontSize: {
+      12: "0.75rem",
+      14: "0.875rem",
+      16: "1rem",
+      18: "1.125rem",
+      24: "1.5rem",
+      32: "2rem",
+      36: "2.25rem",
+      40: "2.5rem",
+      48: "3rem",
+      96: ["6rem", { lineHeight: "1.2em" }],
+      128: ["8rem", { lineHeight: "1.2em" }],
+    },
+    fontFamily: {
+      body: "var(--font-body)",
+      display: "var(--font-display)",
+    },
+    fontWeight: {
+      light: 300,
+      bold: 600,
+    },
     extend: {
-      fontFamily: { sans: ["var(--sans-serif)", "sans-serif"] },
+      leading: {},
+      colors: {
+        background: "#F3F2EF",
+        primary: {
+          900: "#0C0056",
+        },
+      },
+      borderColor: {
+        DEFAULT: "#1f2937",
+      },
     },
   },
   plugins: [],

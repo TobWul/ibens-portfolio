@@ -12,6 +12,8 @@ interface ImageProps {
   aspectRatio?: number;
   sizes?: string;
   loading?: "lazy" | "eager";
+  background?: boolean;
+  fit?: boolean;
 }
 
 export const Image: React.FC<ImageProps> = ({
@@ -20,6 +22,8 @@ export const Image: React.FC<ImageProps> = ({
   className,
   aspectRatio,
   loading,
+  background = false,
+  fit = false,
   sizes = "(max-width: 800px) 100vw, 800px",
 }) => {
   const imageProps = useNextSanityImage(client, image, {
@@ -46,12 +50,19 @@ export const Image: React.FC<ImageProps> = ({
 
   return (
     <Img
-      className={classNames(["select-none", className])}
+      className={classNames([
+        "select-none object-cover",
+        {
+          "bg-white": background,
+          "h-full w-full": fit,
+        },
+        className,
+      ])}
       alt={alt}
       {...imageProps}
       sizes={sizes}
       loading={loading}
-      width={imageProps.width}
+      width={imageProps?.width}
       priority={loading === "eager"}
     />
   );

@@ -4,8 +4,16 @@ import { BlockContent } from "@/types";
 
 interface BlockContentProps {
   blocks: BlockContent;
+  className?: string;
 }
 
-export const PortableText: React.FC<BlockContentProps> = ({ blocks }) => {
-  return <SanityPortableText value={blocks} components={{}} />;
+export const PortableText: React.FC<BlockContentProps> = ({
+  blocks,
+  className,
+}) => {
+  return (
+    <div className={className + " [&>*+*]:mt-[1em]"}>
+      <SanityPortableText value={blocks} components={{}} />
+    </div>
+  );
 };

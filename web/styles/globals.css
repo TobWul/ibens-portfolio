@@ -3,25 +3,36 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --font-display: "Helvetica", sans-serif;
+    --font-body: "Helvetica", sans-serif;
+  }
+  html,
+  body,
+  #__next {
+    height: 100%;
+  }
   body {
-    @apply font-sans;
+    @apply font-body bg-background text-gray-800;
   }
   h1 {
-    @apply text-4xl;
+    @apply text-48 tracking-tight font-display font-light;
   }
   h2 {
-    @apply text-3xl;
+    @apply text-32 font-display font-light;
   }
   h3 {
-    @apply text-2xl;
+    @apply text-24 font-display;
   }
   h4 {
-    @apply text-xl;
+    @apply text-18 font-display;
   }
-  h5 {
-    @apply text-lg;
+
+  p {
+    line-height: 1.6em;
   }
-  h6 {
-    @apply text-base;
+
+  ::selection {
+    @apply bg-gray-900 text-white;
   }
 }

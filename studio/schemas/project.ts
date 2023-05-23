@@ -12,6 +12,11 @@ export const project = defineType({
       type: 'string',
     },
     {
+      name: 'subtitle',
+      type: 'string',
+      title: 'Undertittel',
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'blockContent',

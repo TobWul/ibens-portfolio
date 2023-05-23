@@ -1,6 +1,10 @@
 import { client } from "@/client";
+import { GridColumn } from "@/components/GridColumn";
+import { GridRow } from "@/components/GridRow";
 import { Image } from "@/components/Image";
+import { Layout } from "@/components/Layout";
 import { PortableText } from "@/components/PortableText";
+import { ProjectImage } from "@/components/ProjectImage";
 import { Project } from "@/types";
 import { GetStaticProps } from "next";
 import * as React from "react";
@@ -9,21 +13,28 @@ interface ProjectPageProps extends Project {}
 
 const ProjectPage: React.FC<ProjectPageProps> = ({
   title,
+  subtitle,
   description,
   mainImage,
   images,
 }) => {
   return (
     <main>
-      <header className="text-justify max-w-xl mx-auto py-64">
-        <h1 className="text-center mb-24">{title}</h1>
-        <PortableText blocks={description} />
+      <header className="lg:grid grid-cols-2 border-b gap-24 min-h-[80vh]">
+        <div className="px-24 lg:pl-0 py-24 order-1">
+          <h1 className="text-96">{title}</h1>
+          <p className="mb-24 text-14">{subtitle}</p>
+          <PortableText blocks={description} className="" />
+        </div>
+        <Image
+          image={mainImage}
+          alt={title}
+          className="w-full bg-transparent lg:border-r h-full p-24 max-h-[calc(100vh-24px)]"
+        />
       </header>
-      <div className="space-y-24 p-24">
-        {images.map(({ image, caption }) => (
-          <Image image={image} alt={""} />
-        ))}
-      </div>
+      {images.map((projectImage) => (
+        <ProjectImage key={projectImage._id} alt={title} {...projectImage} />
+      ))}
     </main>
   );
 };
@@ -31,7 +42,9 @@ const ProjectPage: React.FC<ProjectPageProps> = ({
 export default ProjectPage;
 
 export const getStaticPaths = async () => {
-  const result = await client.fetch(`*[_type == "project"]{slug}`);
+  const result = await client.fetch(
+    `*[_type == "project" && defined(slug.current)]{slug}`
+  );
   const paths = result.map((project: Project) => ({
     params: { projectSlug: project.slug.current },
   }));
