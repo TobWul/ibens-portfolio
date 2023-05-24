@@ -1,6 +1,5 @@
 // sanity.js
 import { createClient } from "@sanity/client";
-import sanityClient from "../studio/sanity.cli";
 // Import using ESM URL imports in environments that supports it:
 // import {createClient} from 'https://esm.sh/@sanity/client'
 

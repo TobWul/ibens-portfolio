@@ -17,7 +17,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
   const singleImage = !secondImage && !caption;
   const Wrapper = ({ children }: { children: React.ReactNode }) => (
     <div
-      className="border-b relative md:grid gap-24 px-24 [&_img]:w-full [&_img]:h-full [&_div]:w-full [&_div]:h-full [&_div]:max-h-screen"
+      className="border-b relative md:grid gap-24 px-24 [&_img]:w-full [&_img]:h-full [&_div]:w-full [&_div]:max-h-screen"
       style={{
         gridTemplateColumns:
           singleImage || !gridRatio
@@ -72,10 +72,10 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
         </div>
       )}
       {caption && !secondImage && (
-        <div className="py-24">
-          <div className="sticky top-24">
+        <div className="py-24 h-full">
+          <div className="sticky top-24 h-fit">
             {title && <h3 className="font-bold text-18">{title}</h3>}
-            <p>{caption}</p>
+            <p className="whitespace-pre-wrap">{caption}</p>
           </div>
         </div>
       )}

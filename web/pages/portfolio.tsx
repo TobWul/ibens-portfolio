@@ -48,7 +48,7 @@ const PortfolioPage = ({
                 <Image
                   image={project.mainImage}
                   alt={project.title}
-                  className="flex-1 overflow-hidden transition-all duration-[2s] group-hover:grayscale"
+                  className="flex-1 overflow-hidden transition-all duration-[1s] ease-out group-hover:grayscale"
                   aspectRatio={1}
                 />
 
