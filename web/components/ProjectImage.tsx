@@ -61,7 +61,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
             background
           />
           {actualCaption && (
-            <p className="absolute bottom-16 left-16 text-14 text-gray-800">
+            <p className="absolute bottom-16 left-16 text-14 text-gray-800 bg-white px-4">
               {actualCaption}
             </p>
           )}
