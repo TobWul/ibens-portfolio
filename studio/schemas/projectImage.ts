@@ -31,9 +31,14 @@ export const projectImage = defineType({
     },
     {
       name: 'caption',
-      title: 'Caption',
+      title: 'Tekst',
       type: 'text',
       hidden: ({parent}) => parent?.secondImage || parent?.youtube,
+    },
+    {
+      name: 'actualCaption',
+      type: 'string',
+      title: 'Bildetekst',
     },
     {
       name: 'gridRatio',

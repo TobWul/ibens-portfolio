@@ -6,6 +6,13 @@ const icons = {
       d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
     />
   ),
+  leftArrow: (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M6.75 8.25L2 12m0 0l3.75 3.75M2 12H20"
+    />
+  ),
   video: (
     <path
       strokeLinecap="round"

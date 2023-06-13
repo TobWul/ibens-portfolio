@@ -11,6 +11,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
   gridRatio,
   title,
   caption,
+  actualCaption,
   youtube,
   alt,
 }) => {
@@ -52,12 +53,19 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
           "md:border-r md:pr-24": !singleImage,
         })}
       >
-        <Image
-          image={image}
-          alt={caption || alt || ""}
-          className="h-full w-full "
-          background
-        />
+        <div className="relative w-full h-full">
+          <Image
+            image={image}
+            alt={caption || alt || ""}
+            className="h-full w-full "
+            background
+          />
+          {actualCaption && (
+            <p className="absolute bottom-16 left-16 text-14 text-gray-800">
+              {actualCaption}
+            </p>
+          )}
+        </div>
       </div>
       {secondImage && (
         <div className="h-full py-24">

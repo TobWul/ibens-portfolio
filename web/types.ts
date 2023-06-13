@@ -42,6 +42,7 @@ export type ProjectImage = {
   gridRatio?: number;
   title?: string;
   caption: string;
+  actualCaption?: string;
   youtube?: string;
 };
 

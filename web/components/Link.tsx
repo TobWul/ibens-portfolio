@@ -20,7 +20,7 @@ export const Link: React.FC<LinkProps> = ({
     <NextLink
       href={href}
       className={classNames(
-        "flex items-center gap-8 underline hover:no-underline",
+        "flex items-center gap-8 underline hover:no-underline w-fit",
         {}
       )}
     >

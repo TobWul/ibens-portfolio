@@ -1,8 +1,10 @@
 import { client } from "@/client";
 import { GridColumn } from "@/components/GridColumn";
 import { GridRow } from "@/components/GridRow";
+import { Icon } from "@/components/Icons";
 import { Image } from "@/components/Image";
 import { Layout } from "@/components/Layout";
+import { Link } from "@/components/Link";
 import { PortableText } from "@/components/PortableText";
 import { ProjectImage } from "@/components/ProjectImage";
 import { Project } from "@/types";
@@ -22,7 +24,12 @@ const ProjectPage: React.FC<ProjectPageProps> = ({
     <main>
       <header className="lg:grid grid-cols-2 border-b gap-24 min-h-[80vh]">
         <div className="px-24 lg:pl-0 py-24 order-1">
-          <h1 className="text-96">{title}</h1>
+          <Link href="/portfolio">
+            <Icon icon="leftArrow" />
+            Tilbake
+          </Link>
+
+          <h1 className="text-96 mt-24">{title}</h1>
           <p className="mb-24 text-14">{subtitle}</p>
           <PortableText blocks={description} className="" />
         </div>
