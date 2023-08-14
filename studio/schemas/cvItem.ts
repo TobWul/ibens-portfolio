@@ -1,4 +1,5 @@
 import {defineType} from 'sanity'
+import {project} from './project'
 
 export const cvItem = defineType({
   name: 'cvItem',
@@ -26,9 +27,10 @@ export const cvItem = defineType({
       type: 'number',
     },
     {
-      name: 'url',
-      title: 'URL',
-      type: 'url',
+      name: 'portfolioItem',
+      title: 'Portefølje-prosjekt',
+      type: 'reference',
+      to: [{type: project.name}],
     },
   ],
 })

@@ -20,7 +20,7 @@ export type CVItem = {
   description: BlockContent;
   startYear: number;
   endYear: number;
-  url: string;
+  portfolioItem: Project;
 };
 
 export type Project = {

@@ -5,6 +5,8 @@ import { GridColumn } from "./GridColumn";
 import Image from "next/image";
 import { Link } from "./Link";
 import { Icon } from "./Icons";
+import classNames from "classnames";
+import { CvItem } from "./CvItem";
 
 interface CvProps extends CV {}
 
@@ -52,16 +54,7 @@ export const Cv: React.FC<CvProps> = ({ title, description, categories }) => {
             </div>
             <ul className="pt-96">
               {category.items.map((item) => (
-                <li
-                  key={item.title}
-                  className="border-b last-of-type:border-none p-24"
-                >
-                  <p className="text-24">
-                    {item.startYear} {item.endYear && " – " + item.endYear}
-                  </p>
-                  <h3 className="text-32">{item.title}</h3>
-                  <p className="text-18">{item.description}</p>
-                </li>
+                <CvItem {...item} key={item._id} />
               ))}
             </ul>
           </div>

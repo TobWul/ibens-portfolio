@@ -26,7 +26,16 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const projects = await client.fetch(
     `*[_type == "project" && defined(slug.current) ]`
   );
-  const cv = await client.fetch(`*[_type == "cv"][0]`);
+  const cv = await client.fetch(`*[_type == "cv"][0] {
+    ...,
+    categories[]{
+      ...,
+      items[] {
+        ...,
+        portfolioItem->{...}
+      }
+    }
+  }`);
   return {
     props: {
       projects,
