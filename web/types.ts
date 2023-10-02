@@ -21,6 +21,7 @@ export type CVItem = {
   startYear: number;
   endYear: number;
   portfolioItem: Project;
+  externalLink: string;
 };
 
 export type Project = {

@@ -32,5 +32,10 @@ export const cvItem = defineType({
       type: 'reference',
       to: [{type: project.name}],
     },
+    {
+      name: 'externalLink',
+      title: 'Ekstern lenke',
+      type: 'url',
+    },
   ],
 })
