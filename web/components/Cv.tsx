@@ -38,7 +38,7 @@ export const Cv: React.FC<CvProps> = ({ title, description, categories }) => {
               En personlig introduksjon
             </Link>
             <Link href="https://youtu.be/iRA2Bszg2Sw" icon="video" leading>
-              Hvorfor jeg blevede arkitekt
+              Hvorfor jeg blev arkitekt
             </Link>
           </div>
         </div>
