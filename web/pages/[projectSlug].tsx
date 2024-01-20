@@ -21,22 +21,22 @@ const ProjectPage: React.FC<ProjectPageProps> = ({
   images,
 }) => {
   return (
-    <main>
-      <header className="lg:grid grid-cols-2 border-b gap-24 min-h-[80vh]">
+    <main className="max-w-6xl mx-auto mt-32">
+      <header className="lg:grid grid-cols-2 gap-24 min-h-[70vh]">
         <div className="px-24 lg:pl-0 py-24 order-1">
           <Link href="/portfolio">
             <Icon icon="leftArrow" />
             Tilbake
           </Link>
 
-          <h1 className="text-96 mt-24">{title}</h1>
-          <p className="mb-24 text-14">{subtitle}</p>
-          <PortableText blocks={description} className="" />
+          <h1 className="mt-24 text-96">{title}</h1>
+          <p className="mb-24 text-14 text-gray-500">{subtitle}</p>
+          <PortableText blocks={description} className="font-reading" />
         </div>
         <Image
           image={mainImage}
           alt={title}
-          className="w-full bg-transparent lg:border-r h-full p-24 max-h-[calc(100vh-24px)]"
+          className="w-full h-full p-24 max-h-[calc(100vh-24px)]"
         />
       </header>
       {images.map((projectImage) => (

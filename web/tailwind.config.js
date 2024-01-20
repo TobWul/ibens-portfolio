@@ -40,12 +40,14 @@ module.exports = {
       36: "2.25rem",
       40: "2.5rem",
       48: "3rem",
+      80: ["5rem", { lineHeight: "1.2em" }],
       96: ["6rem", { lineHeight: "1.2em" }],
       128: ["8rem", { lineHeight: "1.2em" }],
     },
     fontFamily: {
       body: "var(--font-body)",
       display: "var(--font-display)",
+      reading: "var(--font-reading)",
     },
     fontWeight: {
       light: 300,

@@ -19,33 +19,40 @@ const PortfolioPage = ({
 
   return (
     <main>
-      <div className="p-24 md:p-64">
-        <div className="w-full block mb-64">
-          <h1 className="text-[128px] font-[300]">{title}</h1>
-          <PortableText blocks={description} className="max-w-3xl" />
-          <div className="mt-24">
-            <TextLink href="/" icon="rightArrow">
-              Se min CV
-            </TextLink>
+      <div className="md:grid grid-cols-[1fr_3fr] relative min-h-screen font-body">
+        <div className="w-full block mb-64 border-r h-full p-64 md:py-96 relative text-justify">
+          <div className="sticky top-64">
+            <h1 className="text-64 font-[300]">{title}</h1>
+            <PortableText
+              blocks={description}
+              className="max-w-3xl text-14 text-gray-600"
+            />
+            <div className="mt-24">
+              <TextLink href="/" icon="leftArrow" leading>
+                CV
+              </TextLink>
+            </div>
           </div>
         </div>
-        <div className="md:grid grid-cols-3 gap-32">
+        <div className="grid md:grid-cols-3 gap-32 p-64 md:p-96">
           {projects.map((project) => (
             <Link
               href={"/" + project.slug?.current}
               key={project._id}
               className="w-full flex flex-col h-full group transition-colors duration-700 ease-out"
             >
-              <Image
-                image={project.mainImage}
-                alt={project.title}
-                className="flex-1 overflow-hidden transition-all duration-[1s] ease-out group-hover:grayscale"
-                aspectRatio={1}
-              />
+              <div className="overflow-hidden">
+                <Image
+                  image={project.mainImage}
+                  alt={project.title}
+                  className="flex-1 overflow-hidden transition-all duration-700 ease-out grayscale group-hover:grayscale-0 group-hover:scale-105"
+                  aspectRatio={1}
+                />
+              </div>
 
-              <div className="mt-16">
-                <h1>{project.title}</h1>
-                <p>{project.subtitle}</p>
+              <div className="mt-8">
+                <p className="text-32 md:text-16 font-light">{project.title}</p>
+                {/* <p>{project.subtitle}</p> */}
               </div>
             </Link>
           ))}

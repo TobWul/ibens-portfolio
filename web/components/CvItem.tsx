@@ -13,34 +13,39 @@ export const CvItem: React.FC<CvItemProps> = ({
   description,
   externalLink,
 }) => {
-  const styling = "border-b last-of-type:border-none p-24";
-  const Content = () => (
+  const styling = "group border-b last-of-type:border-none px-48 py-16";
+
+  const Content = ({ hover }: { hover?: boolean }) => (
     <>
-      <p className="text-24">
+      <p className="text-16">
         {startYear} {endYear && " – " + endYear}
       </p>
-      <h3 className="text-32">{title}</h3>
-      <p className="text-18">{description}</p>
+      <h3
+        className={classNames("text-24", {
+          "underline group-hover:no-underline": hover,
+        })}
+      >
+        {title}
+      </h3>
+      <p className="text-16 max-w-2xl">{description}</p>
     </>
   );
+
   return portfolioItem ? (
-    <li
-      key={title}
-      className={classNames(styling, "block hover:no-underline underline")}
-    >
+    <li key={title} className={classNames(styling, "block")}>
       <Link href={"/" + portfolioItem?.slug?.current}>
-        <Content />
+        <Content hover />
       </Link>
     </li>
   ) : externalLink ? (
     <li key={title}>
       <a
-        className={classNames(styling, "block hover:no-underline underline")}
+        className={classNames(styling, "block")}
         href={externalLink}
         rel="noopener noreferrer"
         target="_blank"
       >
-        <Content />
+        <Content hover />
       </a>
     </li>
   ) : (

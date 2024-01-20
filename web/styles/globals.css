@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --font-display: "Helvetica", sans-serif;
-    --font-body: "Helvetica", sans-serif;
-  }
   html,
   body,
   #__next {
@@ -29,10 +25,10 @@
   }
 
   p {
-    line-height: 1.6em;
+    @apply leading-[1.6em]
   }
 
   ::selection {
-    @apply bg-gray-900 text-white;
+    @apply bg-gray-300 text-gray-800;
   }
 }

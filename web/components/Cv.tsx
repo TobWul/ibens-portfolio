@@ -12,10 +12,10 @@ interface CvProps extends CV {}
 
 export const Cv: React.FC<CvProps> = ({ title, description, categories }) => {
   return (
-    <main className="grid lg:grid-cols-[1fr_3fr] h-full">
+    <main className="grid lg:grid-cols-[1fr_3fr] h-full font-body">
       <div className="border-b lg:border-b-0 lg:border-r h-full relative">
-        <div className="sticky top-0 p-24 bg-background border-b">
-          <h1>{title}</h1>
+        <div className="sticky top-0 p-64 bg-background border-b">
+          <h1 className="tracking-wider">{title}</h1>
           <div className="my-24">
             <p className="font-bold">Iben Kortegaard Rohde</p>
             <p>+45 20 83 50 21</p>

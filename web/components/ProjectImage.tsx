@@ -18,7 +18,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
   const singleImage = !secondImage && !caption;
   const Wrapper = ({ children }: { children: React.ReactNode }) => (
     <div
-      className="border-b relative md:grid gap-24 px-24 [&_img]:w-full [&_img]:h-full [&_div]:w-full [&_div]:max-h-screen"
+      className="relative mt-48 font-reading md:grid gap-24 px-24 [&_img]:w-full [&_img]:h-full [&_div]:w-full [&_div]:max-h-screen"
       style={{
         gridTemplateColumns:
           singleImage || !gridRatio
@@ -32,7 +32,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
   if (youtube) {
     return (
       <Wrapper>
-        <div className="h-full w-full py-24">
+        <div className="h-full w-full py-64">
           <div className="relative h-0" style={{ paddingBottom: "56.25%" }}>
             <iframe
               className="absolute top-0 left-0 w-full h-full"
@@ -50,7 +50,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
     <Wrapper>
       <div
         className={classNames("h-full w-full py-24", {
-          "md:border-r md:pr-24": !singleImage,
+          "md:pr-24": !singleImage,
         })}
       >
         <div className="relative w-full h-full">
